@@ -12,5 +12,5 @@ const schema = makeExecutableSchema({
 
 export default schema;
 
-// 이 schemas.js 라는 파일은 graphql안에 있는 모든 녀석들을 전부다 파일로 수집해서 express에게 전달할 것 이다.
+// schemas.js 라는 파일은 graphql안에 있는 모든 녀석들을 전부다 파일로 수집해서 express에게 전달할 것 이다.
 // graphql 두가지 타입으로 구성된다. 첫번째 .graphql .js 이녀석들을 우리는 얘네를 resolver라고 부른다.

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose"); // mongoose를 mongoose에 욫어하여 넣는다.
+const mongoose = require("mongoose"); // mongoose를 mongoose에 요청하여 넣는다.
 const dotenv = require("dotenv");
 
 const connect = () => {

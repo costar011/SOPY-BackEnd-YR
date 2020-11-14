@@ -5,8 +5,8 @@ dotenv.config(); // dotenv.config() 함수 실행
 import { graphqlHTTP } from "express-graphql";
 import cors from "cors"; // cors를 쓰기 위해 import함
 import bodyParser from "body-parser"; // express middleware body-parser 모듈을 쓰기 위해 import함
-import schema from "../graphql/schemas";
-import connect from "../db/mongo";
+import schema from "../graphql/schemas"; // schema를 사용하기 위해 graphql폴더 안에서 import함
+import connect from "../db/mongo"; // connect를 사용하기 위해 db폴더 안 mongo에서 import함
 
 // express를 app에 넣는다.
 const app = express();
