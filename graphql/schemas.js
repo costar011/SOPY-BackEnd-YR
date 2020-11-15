@@ -1,10 +1,16 @@
 import path from "path"; // path-> 경로 경로를 추적할 수 있는 것을 impoert함
-import { makeExecutableSchema } from "graphql-tools"; //
+import { makeExecutableSchema } from "graphql-tools"; // graphql-tools에서 makeExecutableSchema를 가져온다. 스키마를 실행시키는 코드
 import { fileLoader, mergeResolvers, mergeTypes } from "merge-graphql-schemas";
+// merge-graphql-schemas에서 fileLoader, mergeResolvers, mergeTypes가 필요하다.
+// mergeResolvers는 resolver를 합치고 mergeTypes 타입디페니스들을 합친 다음에 fileLoader로 읽어낸 다음에 express로 보내준다.
 
+// /api/**/*.  <---  api안에  * *가 있는데 얘는 폴더가 있든 없든 상관이 없다는 의미 어떤 폴더든 전부 다 인지하고 그 안에 있는 *.graphql graphql로 되어있는 모든 파일을 allTypes에 담는다는 의미
+// /api/**/*.  <---  api안에  * *가 있는데 얘는 폴더가 있든 없든 상관이 없다는 의미 어떤 폴더든 전부 다 인지하고 그 안에 있는 *.js js로 되어있는 모든 파일을 다 allResolvers에 담는다는 의미
+// fileLoader가 다 파일들을 읽어서 담아줄 것 이다.
 const allTypes = fileLoader(path.join(__dirname, "/api/**/*.graphql"));
 const allResolvers = fileLoader(path.join(__dirname, "/api/**/*.js"));
 
+// 다 담았으니까 schema에다가 makeExecutableSchema
 const schema = makeExecutableSchema({
   typeDefs: mergeTypes(allTypes),
   resolvers: mergeResolvers(allResolvers),

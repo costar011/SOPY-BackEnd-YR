@@ -2,7 +2,7 @@ import express from "express"; // express framework를 사용하기 위해 impor
 import morgan from "morgan"; // debugging을 위해 morgan을 import함
 import dotenv from "dotenv"; // dotenv를 쓰기 위해 import함
 dotenv.config(); // dotenv.config() 함수 실행
-import { graphqlHTTP } from "express-graphql";
+import { graphqlHTTP } from "express-graphql"; // graphqlHTTP를 실행하기 위해 express-graphql에서 import함
 import cors from "cors"; // cors를 쓰기 위해 import함
 import bodyParser from "body-parser"; // express middleware body-parser 모듈을 쓰기 위해 import함
 import schema from "../graphql/schemas"; // schema를 사용하기 위해 graphql폴더 안에서 import함
