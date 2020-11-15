@@ -10,12 +10,14 @@ import { fileLoader, mergeResolvers, mergeTypes } from "merge-graphql-schemas";
 const allTypes = fileLoader(path.join(__dirname, "/api/**/*.graphql"));
 const allResolvers = fileLoader(path.join(__dirname, "/api/**/*.js"));
 
-// 다 담았으니까 schema에다가 makeExecutableSchema
+// 다 담았으니까 schema에다가 makeExecutableSchema typeDefs,resolvers 담아주고 이 안에다가 mergeTypes(allTypes),mergeResolvers(allResolvers)를 넣는다.
+// 지금불러온 녀석들을 전부 다 makeExecutableSchema를 통해서 schema라는 변수에 싹 다 담았다.
 const schema = makeExecutableSchema({
   typeDefs: mergeTypes(allTypes),
   resolvers: mergeResolvers(allResolvers),
 });
 
+// schema라는 변수애 담은 애들을 export default 해준 것 이다.
 export default schema;
 
 // schemas.js 라는 파일은 graphql안에 있는 모든 녀석들을 전부다 파일로 수집해서 express에게 전달할 것 이다.
