@@ -38,3 +38,8 @@ app.listen(app.get(`PORT`), () => {
     `[SOPY SERVER START]:: ${process.env.PORT}, WITH GraphQL - MongoDB`
   );
 });
+
+// nodemon설정을 바꿔주기위해서 nodemon.json에 "ext" :"js graphql" 적어둔다.
+// resolver 파일과 graphql 파일도 nodemon이 인지를 하겠다는 의미이다.  graphql를 수정해도 서버가 재실행될 것 이다.
+// 이걸 안잡으면 서버가 재실행되지 않는다. nodemon이 무용지물 되어버린다.
+// ext는 확장자를 의미한다.
