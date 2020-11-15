@@ -21,7 +21,7 @@ app.use(morgan(`dev`));
 // connect(); <--- 함수
 connect();
 
-// app에게 사용자가 "/graphql" 일 때 cors() 실행하고, bodyPaser 실행하고 그다음 graphqlHTTP를 실행할건데 schema를 가지고 실행할거야.
+// app에게 사용자가 "/graphql" 일 때 미들웨어로 cors() 실행하고, bodyPaser 실행하고 그다음 graphqlHTTP를 실행할건데 graphql폴더 안에 있는 schema를 가지고 실행할거야.
 app.use(
   "/graphql",
   cors(),
@@ -32,7 +32,7 @@ app.use(
   })
 );
 
-// 설정 끝난 후 Server Start
+// 설정 끝난 후 app.get에 `PORT`를 넣고 콜백함수를 써준 뒤 console.log를 실행시킨다.
 app.listen(app.get(`PORT`), () => {
   console.log(
     `[SOPY SERVER START]:: ${process.env.PORT}, WITH GraphQL - MongoDB`
