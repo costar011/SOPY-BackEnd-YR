@@ -6,3 +6,12 @@ type Lecture {
   grade: Int!
   pay: Int!
 }
+
+type Test {
+  _id: ID!
+  name: String!
+  age: Int!
+  school: String!
+  gender: String!
+  regeon: String!
+}
