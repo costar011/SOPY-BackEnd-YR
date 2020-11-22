@@ -3,6 +3,7 @@ import Lecture from "../../../model/Lecture"; // Lecture DB를 쓰기 위해 imp
 export default {
   // 외부에서 사용하겠다
   Query: {
+    // Qurey 데이터 갖고오는 것 빼고는 전부 다  Mutation 이다.
     getAllLecture: async (_, args) => {
       try {
         const result = await Lecture.find({}, {});
