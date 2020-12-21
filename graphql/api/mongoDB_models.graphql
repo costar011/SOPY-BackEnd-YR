@@ -15,3 +15,9 @@ type Test {
   gender: String!
   regeon: String!
 }
+
+type User {
+  _id: ID!
+  name: String!
+  mobile: String!
+}
