@@ -35,7 +35,7 @@ app.use(
 // 설정 끝난 후 app.get에 `PORT`를 넣고 콜백함수를 써준 뒤 console.log를 실행시킨다.
 app.listen(app.get(`PORT`), () => {
   console.log(
-    `[SOPY SERVER START]:: ${process.env.PORT}, WITH GraphQL - MongoDB`
+    `[SOPY SERVER START] ${process.env.PORT}, WITH GraphQL - MongoDB`
   );
 });
 
