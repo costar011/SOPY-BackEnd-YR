@@ -1,0 +1,11 @@
+type Mutation {
+  registUser(
+    name: String!
+    email: String!
+    nickName: String!
+    mobile: String!
+    zoneCode: String!
+    address: String!
+    detailAddress: String!
+  ): Boolean!
+}
