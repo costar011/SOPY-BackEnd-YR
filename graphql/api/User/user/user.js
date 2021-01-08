@@ -1,4 +1,6 @@
 import User from "../../../model/User";
+import nodemailer from "nodemailer";
+import smtpPool from "nodemailer-smtp-pool";
 
 export default {
   Mutation: {
@@ -12,22 +14,6 @@ export default {
         address,
         detailAddress,
       } = args;
-      try {
-        const result = await User.create({
-          name,
-          email,
-          nickName,
-          mobile,
-          zoneCode,
-          address,
-          detailAddress,
-        });
-
-        return true;
-      } catch (e) {
-        console.log(e);
-        return false;
-      }
     },
   },
 };
