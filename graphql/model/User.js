@@ -33,10 +33,6 @@ const User = new Schema(
       type: String,
       required: true,
     },
-    createdAt: {
-      type: String,
-      required: true,
-    },
     Videos: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -55,6 +51,11 @@ const User = new Schema(
         ref: `User`,
       },
     ],
+    secretCode: {
+      type: String,
+      required: true,
+      default: "-",
+    },
   },
   { versionKey: false }
 );

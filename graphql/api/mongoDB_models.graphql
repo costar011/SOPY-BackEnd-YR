@@ -1,12 +1,3 @@
-type Lecture {
-  _id: ID!
-  name: String!
-  teacher: String!
-  time: Int!
-  grade: Int!
-  pay: Int!
-}
-
 type Video {
   _id: ID!
   title: String!

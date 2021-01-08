@@ -8,4 +8,7 @@ type Mutation {
     address: String!
     detailAddress: String!
   ): Boolean!
+
+  tryLogin(email: String!): Boolean!
+  checkSecretCode(email: String!, code: String!): Boolean!
 }
