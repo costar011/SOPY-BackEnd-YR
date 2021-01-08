@@ -7,15 +7,6 @@ type Lecture {
   pay: Int!
 }
 
-type Test {
-  _id: ID!
-  name: String!
-  age: Int!
-  school: String!
-  gender: String!
-  regeon: String!
-}
-
 type Video {
   _id: ID!
   title: String!
